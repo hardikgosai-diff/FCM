@@ -11,9 +11,14 @@ class UserRepository @Inject constructor(
 
     val allUsers: Flow<List<User>> = userDao.getAllUsers()
 
-    suspend fun getUser() : User = apiService.getUser()
+    suspend fun getUsers(): List<User> = apiService.getUsers()
+
+    suspend fun getUser(): User = apiService.getUser()
 
     suspend fun insert(user: User) = userDao.insert(user)
 
+    suspend fun insert(user: List<User>) = userDao.insert(user)
+
     suspend fun delete(user: User) = userDao.delete(user)
+
 }

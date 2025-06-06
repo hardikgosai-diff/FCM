@@ -17,23 +17,28 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("onCreate")
         initRoom()
     }
 
     private fun initRoom() {
         userViewModel.allUsers.observe(this) { users ->
+            println("users: ${users.size}")
             if (users.isNotEmpty()) {
                 user = users.last()
                 println("Id: ${user!!.id}, User: ${user!!.name}, Email: ${user!!.email}, Age: ${user!!.age}")
-            } else println("empty")
+            }
         }
-
         binding.btGetUser.setOnClickListener {
             userViewModel.getUser()
         }
+        binding.btGetUsers.setOnClickListener {
+            userViewModel.getUsers()
+        }
         binding.btAddUser.setOnClickListener {
-            userViewModel.insert(User(name = "John", email = "john@yopmail.com", age = 25))
+            userViewModel.insert(User(name = "John", email = "john@yopmail.com", age = 32))
+        }
+        binding.btAddUsers.setOnClickListener {
+            userViewModel.insert(listOf(User(name = "John", email = "john@yopmail.com", age = 32)))
         }
         binding.btDeleteUser.setOnClickListener {
             user?.let { it1 -> userViewModel.delete(it1) }

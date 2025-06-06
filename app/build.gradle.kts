@@ -55,6 +55,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.messaging)
+    implementation(libs.firebase.inappmessaging.display)
 
     implementation(libs.androidx.room.runtime)
     kapt(libs.androidx.room.compiler)

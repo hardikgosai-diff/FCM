@@ -24,10 +24,22 @@
             android:text="Get User" />
 
         <Button
+            android:id="@+id/btGetUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Users" />
+
+        <Button
             android:id="@+id/btAddUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add User" />
+
+        <Button
+            android:id="@+id/btAddUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add User List" />
 
         <Button
             android:id="@+id/btDeleteUser"
